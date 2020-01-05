@@ -84,8 +84,8 @@ export const Handle = styled.div<HandleProps>`
   transition: 0.3s all ease;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
 
-  &:hover {
-    color: ${props => props.theme.colors.primary};
+  &:hover svg {
+    transform: scale(1.2);
   }
 `;
 
@@ -100,9 +100,11 @@ export const NextHandle = styled(Handle)`
 export const PreviousHandleIcon = styled(FiChevronLeft)`
   width: 100%;
   height: 100%;
+  transition: 0.3s all ease;
 `;
 
 export const NextHandleIcon = styled(FiChevronRight)`
   width: 100%;
   height: 100%;
+  transition: 0.3s all ease;
 `;
