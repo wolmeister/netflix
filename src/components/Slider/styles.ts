@@ -70,6 +70,7 @@ export const Slide = styled.div<SlideProps>`
 `;
 
 export const Handle = styled.div<HandleProps>`
+  cursor: pointer;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -82,6 +83,10 @@ export const Handle = styled.div<HandleProps>`
   background-color: rgba(20, 20, 20, 0.7);
   transition: 0.3s all ease;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
+
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
 export const PreviousHandle = styled(Handle)`
