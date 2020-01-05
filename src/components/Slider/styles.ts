@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 type SlideProps = {
   index: number;
@@ -79,7 +80,8 @@ export const Handle = styled.div<HandleProps>`
   display: flex;
   color: #ffffff;
   background-color: rgba(20, 20, 20, 0.7);
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+  transition: 0.3s all ease;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
 `;
 
 export const PreviousHandle = styled(Handle)`
@@ -88,4 +90,14 @@ export const PreviousHandle = styled(Handle)`
 
 export const NextHandle = styled(Handle)`
   right: 0;
+`;
+
+export const PreviousHandleIcon = styled(FiChevronLeft)`
+  width: 100%;
+  height: 100%;
+`;
+
+export const NextHandleIcon = styled(FiChevronRight)`
+  width: 100%;
+  height: 100%;
 `;

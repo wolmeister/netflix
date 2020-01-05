@@ -8,6 +8,8 @@ import {
   Slides,
   PreviousHandle,
   NextHandle,
+  PreviousHandleIcon,
+  NextHandleIcon,
 } from './styles';
 import { SliderProps } from './types';
 
@@ -35,8 +37,12 @@ function Slider({ items, onPlay, onInfo }: SliderProps) {
 
   return (
     <StyledSlider>
-      <PreviousHandle visible={hasPrevious} onClick={handlePrevious} />
-      <NextHandle visible={hasNext} onClick={handleNext} />
+      <PreviousHandle visible={hasPrevious} onClick={handlePrevious}>
+        <PreviousHandleIcon />
+      </PreviousHandle>
+      <NextHandle visible={hasNext} onClick={handleNext}>
+        <NextHandleIcon />
+      </NextHandle>
       <Slides style={{ transform: `translateX(${translateX}%)` }}>
         {items.map((i, index) => {
           const hover = hoverIndex === index;
