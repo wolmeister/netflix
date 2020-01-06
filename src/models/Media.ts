@@ -1,8 +1,9 @@
 export default interface Media {
   id: number;
   title: string;
-  art: string;
-  file: string;
+  art: string; // url
+  titleArt: string; // url
+  file: string; // url
   synopsis: string;
   rating: number;
   duration: string;
