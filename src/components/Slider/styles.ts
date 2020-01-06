@@ -83,6 +83,7 @@ export const Handle = styled.div<HandleProps>`
   background-color: rgba(20, 20, 20, 0.7);
   transition: 0.3s all ease;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
+  pointer-events: ${({ visible }) => (visible ? '' : 'none')};
 
   &:hover svg {
     transform: scale(1.2);
