@@ -1,6 +1,7 @@
 import User from '~/models/User';
 
 export const SIGN_IN = '@@auth/SIGN_IN';
+export const SIGN_OUT = '@@auth/SIGN_OUT';
 
 export type AuthState = {
   user: User | null;
@@ -17,4 +18,8 @@ interface SignInAction {
   payload: SignInPayload;
 }
 
-export type AuthActionTypes = SignInAction;
+interface SignOutAction {
+  type: typeof SIGN_OUT;
+}
+
+export type AuthActionTypes = SignInAction | SignOutAction;

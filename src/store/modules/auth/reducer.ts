@@ -1,4 +1,4 @@
-import { AuthState, AuthActionTypes, SIGN_IN } from './types';
+import { AuthState, AuthActionTypes, SIGN_IN, SIGN_OUT } from './types';
 
 import { getUser } from '~/services/user';
 
@@ -32,6 +32,11 @@ export default function authReducer(
         error: null,
       };
     }
+    case SIGN_OUT:
+      return {
+        ...state,
+        user: null,
+      };
     default:
       return state;
   }
