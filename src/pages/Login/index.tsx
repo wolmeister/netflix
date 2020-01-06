@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { signIn } from '~/store/modules/auth/actions';
+import { RootState } from '~/store/modules/rootReducer';
 import Input from '~/components/InputField';
 import {
   StyledLogin,
@@ -14,9 +17,15 @@ import {
 } from './styles';
 
 export default function Login() {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const error = '';
+  const error = useSelector((state: RootState) => state.auth.error);
+
+  function submit(e: MouseEvent) {
+    e.preventDefault();
+    dispatch(signIn({ email, password }));
+  }
 
   return (
     <StyledLogin>
@@ -34,7 +43,7 @@ export default function Login() {
             onChange={setPassword}
             type="password"
           />
-          <Button>Sign In</Button>
+          <Button onClick={submit}>Sign In</Button>
         </LoginForm>
       </LoginBody>
       <BackgroundWrapper>
