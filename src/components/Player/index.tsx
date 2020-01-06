@@ -8,7 +8,14 @@ import './styles.css';
 import { StyledPlayer } from './styles';
 import { PlayerProps } from './types';
 
-function Player({ url, onControlsShow, onControlsHide }: PlayerProps) {
+function Player({
+  url,
+  initialTime = 0,
+  onControlsShow,
+  onControlsHide,
+  onProgress,
+  onEnded,
+}: PlayerProps) {
   const [plyr, setPlyr] = useState<Plyr | null>(null);
   const ref = useCallback((e: HTMLVideoElement) => {
     const instance = new Plyr(e, {
@@ -25,11 +32,8 @@ function Player({ url, onControlsShow, onControlsHide }: PlayerProps) {
       autoplay: true,
     });
 
-    // the volume button dissapers after initialization
-    // https://github.com/sampotts/plyr/issues/1208
     instance.on('loadeddata', () => {
-      // eslint-disable-next-line no-self-assign
-      instance.currentTime = instance.currentTime;
+      instance.currentTime = initialTime;
     });
     instance.on('controlsshown', () => {
       if (onControlsShow) {
@@ -39,6 +43,16 @@ function Player({ url, onControlsShow, onControlsHide }: PlayerProps) {
     instance.on('controlshidden', () => {
       if (onControlsHide) {
         onControlsHide();
+      }
+    });
+    instance.on('timeupdate', event => {
+      if (onProgress) {
+        onProgress(event.detail.plyr.currentTime);
+      }
+    });
+    instance.on('ended', () => {
+      if (onEnded) {
+        onEnded();
       }
     });
 
