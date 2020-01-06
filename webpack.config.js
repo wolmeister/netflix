@@ -42,7 +42,7 @@ module.exports = {
         loader: 'source-map-loader',
       },
       {
-        test: /\.(jpg|png|svg|mp4)$/,
+        test: /\.(jpg|png|svg|mp4|webp)$/,
         use: {
           loader: 'file-loader',
         },
