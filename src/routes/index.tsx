@@ -3,6 +3,7 @@ import { Switch, Redirect } from 'react-router-dom';
 
 import Home from '~/pages/Home';
 import Watch from '~/pages/Watch';
+import Account from '~/pages/Account';
 import Login from '~/pages/Login';
 
 import Route, { RouteProps } from './Route';
@@ -17,6 +18,11 @@ const routes: RouteProps[] = [
   {
     component: Watch,
     path: '/watch/:id',
+    isPrivate: true,
+  },
+  {
+    component: Account,
+    path: '/account',
     isPrivate: true,
   },
   {
