@@ -15,10 +15,11 @@ import {
   ProfileMenuItem,
   ProfileMenuLinkItem,
 } from './styles';
+import { HeaderProps } from './types';
 
 import profileImg from '~/assets/profile.png';
 
-function Header() {
+function Header({ transparent }: HeaderProps) {
   const dispatch = useDispatch();
 
   function handleSignOut() {
@@ -26,7 +27,7 @@ function Header() {
   }
 
   return (
-    <StyledHeader>
+    <StyledHeader transparent={transparent}>
       <LogoLink to="/">
         <Logo />
       </LogoLink>

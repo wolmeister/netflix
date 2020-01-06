@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
+import { HeaderProps } from './types';
 import logo from '~/assets/logo.svg';
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.div<HeaderProps>`
   z-index: 1;
   position: fixed;
   top: 0;
@@ -11,12 +12,13 @@ export const StyledHeader = styled.div`
   display: flex;
   height: 68px;
   padding: 0 4%;
-  /* background-image: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.7) 10%,
     rgba(0, 0, 0, 0)
-  ); */
-  background-color: #141414;
+  );
+  background-color: ${({ transparent }) => (transparent ? '' : '#141414')};
+  transition: 0.3s all ease;
 `;
 
 export const LogoLink = styled(Link)`
