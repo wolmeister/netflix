@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import logo from '~/assets/logo.svg';
-
-type NavigationTabProps = {
-  active?: boolean;
-};
 
 export const StyledHeader = styled.div`
   z-index: 1;
@@ -42,16 +38,21 @@ export const NavigationTabs = styled.div`
   align-items: center;
 `;
 
-export const NavigationTab = styled.div<NavigationTabProps>`
+export const NavigationTab = styled(NavLink)`
   transition: color 0.4s;
   margin-left: 18px;
   user-select: none;
-  color: ${({ active }) => (active ? '#ffffff' : '#e5e5e5')};
-  cursor: ${({ active }) => (active ? '' : 'pointer')};
-  font-weight: ${({ active }) => (active ? 'bold' : '')};
+  color: #e5e5e5;
+  cursor: pointer;
 
-  &:hover {
-    color: ${({ active }) => (active ? '' : '#b3b3b3')};
+  &:hover:not(.active) {
+    color: #b3b3b3;
+  }
+
+  &.active {
+    color: #ffffff;
+    cursor: default;
+    font-weight: bold;
   }
 `;
 

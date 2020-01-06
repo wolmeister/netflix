@@ -31,11 +31,13 @@ function Header() {
         <Logo />
       </LogoLink>
       <NavigationTabs>
-        <NavigationTab active>Home</NavigationTab>
-        <NavigationTab>TV Shows</NavigationTab>
-        <NavigationTab>Movies</NavigationTab>
-        <NavigationTab>Latest</NavigationTab>
-        <NavigationTab>My List</NavigationTab>
+        <NavigationTab to="/" exact>
+          Home
+        </NavigationTab>
+        <NavigationTab to="/shows">TV Shows</NavigationTab>
+        <NavigationTab to="/movies">Movies</NavigationTab>
+        <NavigationTab to="/latest">Latest</NavigationTab>
+        <NavigationTab to="/list">My List</NavigationTab>
       </NavigationTabs>
       <ProfileContainer>
         <ProfileImage src={profileImg} />
