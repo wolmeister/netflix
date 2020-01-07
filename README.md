@@ -37,6 +37,22 @@ The application runs on the port 3000 by default.
 - `yarn build` - builds the production version of the app
 - `yarn lint` - runs the linting
 
+## Accounts
+
+- name: 'Victor Wolmeister'
+
+  - Email: victor@gmail.com
+  - Password: test
+
+- name: Matheus Michels
+
+  - Email: mm@gmail.com
+  - Password: 1234
+
+- Geraldo
+  - Email: geraldo@gmail.com
+  - Password: rivia
+
 ## Screenshots
 
 ![Login](https://github.com/wolmeister/netflix/blob/master/docs/login.png)
