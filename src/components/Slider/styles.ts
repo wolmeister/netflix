@@ -14,6 +14,7 @@ export const StyledSlider = styled.div`
   white-space: nowrap;
   padding: 0 4%;
   position: relative;
+  z-index: 5;
 `;
 
 export const Slides = styled.div`
