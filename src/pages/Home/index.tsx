@@ -10,6 +10,7 @@ import { getMedias, getUnfinishedMedias } from '~/services/media';
 import { getBillboard } from '~/services/billboard';
 import { RootState } from '~/store/modules/rootReducer';
 import BrowserSlider from '~/components/BrowserSlider';
+import { StyledHome, Slides } from './styles';
 
 function Home() {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -43,7 +44,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <StyledHome>
       <Header transparent={transparentHeader} />
       {billboard && (
         <Billboard
@@ -53,31 +54,37 @@ function Home() {
           }}
         />
       )}
-      <BrowserSlider
-        title="Trending Now"
-        items={medias}
-        onPlay={handlePlay}
-        relativeTitle={!!billboard}
-      />
-      {!!watchingMedias.length && (
+      <Slides>
         <BrowserSlider
-          title="Continue Watching"
-          items={watchingMedias}
+          title="Trending Now"
+          items={medias}
+          onPlay={handlePlay}
+          relativeTitle={!!billboard}
+        />
+        {!!watchingMedias.length && (
+          <BrowserSlider
+            title="Continue Watching"
+            items={watchingMedias}
+            onPlay={handlePlay}
+          />
+        )}
+        <BrowserSlider
+          title="Watch It Again"
+          items={medias}
           onPlay={handlePlay}
         />
-      )}
-      <BrowserSlider
-        title="Watch It Again"
-        items={medias}
-        onPlay={handlePlay}
-      />
-      <BrowserSlider
-        title="Popular on Netflix"
-        items={medias}
-        onPlay={handlePlay}
-      />
-      <BrowserSlider title="New Releases" items={medias} onPlay={handlePlay} />
-    </div>
+        <BrowserSlider
+          title="Popular on Netflix"
+          items={medias}
+          onPlay={handlePlay}
+        />
+        <BrowserSlider
+          title="New Releases"
+          items={medias}
+          onPlay={handlePlay}
+        />
+      </Slides>
+    </StyledHome>
   );
 }
 
