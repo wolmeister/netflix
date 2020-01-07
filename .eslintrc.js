@@ -38,6 +38,8 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-useless-constructor': 'error',
   },
   settings: {
     'import/resolver': {

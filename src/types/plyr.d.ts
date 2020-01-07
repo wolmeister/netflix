@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Type definitions for plyr 3.3.15
 // Definitions by: Michael Wagner <https://github.com/wagich>, tdaines <https://github.com/tdaines>
 
 declare module 'plyr' {
-  export default Plyr;
-
-  class Plyr {
-    static setup(targets: NodeList, options?: Plyr.Options): Plyr[];
-    static setup(targets: HTMLElement, options?: Plyr.Options): Plyr[];
-    static setup(targets: HTMLElement[], options?: Plyr.Options): Plyr[];
-    static setup(targets: string, options?: Plyr.Options): Plyr[];
+  export default class Plyr {
+    static setup(
+      targets: NodeList | HTMLElement | HTMLElement[] | string,
+      options?: Plyr.Options
+    ): Plyr[];
 
     /**
      * Check for support
@@ -427,7 +426,7 @@ declare module 'plyr' {
       /**
        * Allows binding of event listeners to the controls before the default handlers. See the defaults.js for available listeners. If your handler prevents default on the event (event.preventDefault()), the default handler will not fire.
        */
-      listeners?: Object;
+      listeners?: Record<string, any>;
 
       /**
        * active: Toggles if captions should be active by default. language: Sets the default language to load (if available). 'auto' uses the browser language. update: Listen to changes to tracks and update menu. This is needed for some streaming libraries, but can result in unselectable language options).
