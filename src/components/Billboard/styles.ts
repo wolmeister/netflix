@@ -7,7 +7,6 @@ export const StyledBillboard = styled.div`
   margin-bottom: 20px;
   padding-bottom: 40%;
   background-color: #000000;
-  z-index: -1;
 `;
 
 export const Background = styled.img`
