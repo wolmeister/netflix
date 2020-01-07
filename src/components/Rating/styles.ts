@@ -14,7 +14,7 @@ export const StyledRating = styled.span<RatingProps>`
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 14px;
+  /* font-size: 14px; */
   margin-right: 8px;
   background-color: ${({ color }) => color};
 `;
