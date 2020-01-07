@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { FiChevronDown, FiPlayCircle } from 'react-icons/fi';
 
-type RatingProps = {
-  color: string;
-};
-
 export const StyledSlideContent = styled.div`
   background-color: #000;
   color: #fff;
@@ -61,19 +57,6 @@ export const Title = styled.span`
 export const Row = styled.div`
   display: flex;
   align-items: center;
-`;
-
-export const Rating = styled.span<RatingProps>`
-  height: 25px;
-  width: 25px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  margin-right: 8px;
-  background-color: ${({ color }) => color};
 `;
 
 export const Duration = styled.span`
