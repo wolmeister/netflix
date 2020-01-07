@@ -53,7 +53,12 @@ function Home() {
           }}
         />
       )}
-      <BrowserSlider title="Trending Now" items={medias} onPlay={handlePlay} />
+      <BrowserSlider
+        title="Trending Now"
+        items={medias}
+        onPlay={handlePlay}
+        relativeTitle={!!billboard}
+      />
       {!!watchingMedias.length && (
         <BrowserSlider
           title="Continue Watching"
