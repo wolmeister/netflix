@@ -1,8 +1,8 @@
+![Preview](https://github.com/wolmeister/netflix/blob/master/docs/home.png)
+
 <h3 align="center">
 <b>A Netflix clone made with React and TypeScript</b>
 <h3>
-
-![Preview](https://github.com/wolmeister/netflix/blob/master/docs/home.png)
 
 ## Features
 
@@ -37,14 +37,24 @@ The application runs on the port 3000 by default.
 - `yarn build` - builds the production version of the app
 - `yarn lint` - runs the linting
 
+## Docker
+
+To start the production version through docker, run the following command
+
+```bash
+docker-compose up
+```
+
+The application is deployed to the port 8080 by default.
+
 ## Accounts
 
-- name: 'Victor Wolmeister'
+- Victor Wolmeister
 
   - Email: victor@gmail.com
   - Password: test
 
-- name: Matheus Michels
+- Matheus Michels
 
   - Email: mm@gmail.com
   - Password: 1234
