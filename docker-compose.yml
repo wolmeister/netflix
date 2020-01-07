@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  frontend:
+    container_name: netflix_frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: wolmeister/netflix_frontend
+    ports:
+      - '8080:80'
